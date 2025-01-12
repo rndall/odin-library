@@ -79,4 +79,32 @@ header {
 
 main {
 	padding: 32px 16px;
+	text-align: center;
+}
+
+#your-books {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 250px);
+	justify-content: center;
+	gap: 28px;
+	max-width: 1280px;
+	margin: 12px auto;
+}
+
+.card {
+	display: grid;
+	gap: 8px;
+	align-content: center;
+	background-color: white;
+	height: 250px;
+	border-radius: 8px;
+	box-shadow: 3px 3px 3px hsl(0deg, 0%, 70%);
+}
+
+.card__title {
+	font-size: 1.25rem;
+}
+
+.card__text--italic {
+	font-style: italic;
 }

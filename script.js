@@ -31,12 +31,12 @@ function displayBooks() {
 		title.textContent = book.title;
 
 		const author = document.createElement("p");
-		author.classList.add("card__text");
+		author.classList.add("card__text", "card__text--italic");
 		author.textContent = book.author;
 
 		const pages = document.createElement("p");
 		pages.classList.add("card__text");
-		pages.textContent = book.pages;
+		pages.textContent = `${book.pages} pages`;
 
 		const read = document.createElement("p");
 		read.classList.add("card__text");
