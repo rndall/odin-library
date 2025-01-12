@@ -11,5 +11,5 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(title, author, pages, read) {
 	const book = new Book(title, author, pages, read);
-	myLibrary.append(book);
+	myLibrary.push(book);
 }
