@@ -1,6 +1,7 @@
 const newBookBtn = document.querySelector("#new-book");
 const yourBooks = document.querySelector("#your-books");
 const newBookDialog = document.querySelector("#new-book-dialog");
+const bookForm = document.querySelector("#book-form");
 const closeBtn = document.querySelector("#close-btn");
 
 const myLibrary = [];
@@ -9,6 +10,26 @@ addBookToLibrary("Test1", "Elon Musk", 23, false);
 addBookToLibrary("Test2", "Hana", 89, true);
 
 displayBooks();
+
+bookForm.addEventListener("submit", (e) => {
+	e.preventDefault();
+
+	const titleInput = document.querySelector("#title");
+	const authorInput = document.querySelector("#author");
+	const pagesInput = document.querySelector("#pages");
+	const readInput = document.querySelector("#read");
+
+	addBookToLibrary(
+		titleInput.value,
+		authorInput.value,
+		pagesInput.value,
+		readInput.value,
+	);
+
+	newBookDialog.close();
+
+	displayBooks();
+});
 
 closeBtn.addEventListener("click", () => {
 	newBookDialog.close();

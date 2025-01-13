@@ -22,7 +22,7 @@
 
     <dialog id="new-book-dialog">
       <h2>Add New Book</h2>
-      <form class="form">
+      <form class="form" id="book-form">
         <label class="form__label">
           Title <input class="form__input" id="title" type="text" required />
         </label>
@@ -35,7 +35,7 @@
         <label class="form__label">
           Read? <input class="form__input" id="read" type="checkbox" />
         </label>
-        <button class="form__button button" id="add-book-btn">Add Book</button>
+        <button class="form__button button">Add Book</button>
         <button
           class="form__button button button--danger"
           id="close-btn"
