@@ -92,6 +92,7 @@ header {
 	padding: 10px 28px;
 	border-radius: 8px;
 	cursor: pointer;
+	transition: background-color .1s ease-in-out;
 }
 
 .button--state-danger {
@@ -100,6 +101,30 @@ header {
 
 .button--state-success {
 	background-color: green;
+}
+
+.button:hover {
+	background-color: hsl(0, 0%, 8%);
+}
+
+.button--state-danger:hover {
+	background-color: hsl(0, 100%, 60%);
+}
+
+.button--state-success:hover {
+	background-color: hsl(120, 100%, 35%);
+}
+
+.button:active {
+	background-color: hsl(0, 0%, 0%);
+}
+
+.button--state-danger:active {
+	background-color: hsl(0, 100%, 40%);
+}
+
+.button--state-success:active {
+	background-color: hsl(120, 100%, 20%);
 }
 
 #new-book-dialog {
