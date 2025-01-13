@@ -26,6 +26,8 @@ bookForm.addEventListener("submit", (e) => {
 		readInput.value,
 	);
 
+	bookForm.reset();
+
 	newBookDialog.close();
 
 	displayBooks();
