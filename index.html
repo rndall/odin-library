@@ -30,7 +30,14 @@
           Author <input class="form__input" id="author" type="text" required />
         </label>
         <label class="form__label">
-          Pages <input class="form__input" id="pages" type="tel" required />
+          Pages
+          <input
+            class="form__input"
+            id="pages"
+            type="tel"
+            pattern="^\d+$"
+            required
+          />
         </label>
         <label class="form__label">
           Read? <input class="form__input" id="read" type="checkbox" />
