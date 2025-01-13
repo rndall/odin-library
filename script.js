@@ -1,3 +1,4 @@
+const newBookBtn = document.querySelector("#new-book");
 const yourBooks = document.querySelector("#your-books");
 
 const myLibrary = [];
@@ -6,6 +7,8 @@ addBookToLibrary("Test1", "Elon Musk", 23, false);
 addBookToLibrary("Test2", "Hana", 89, true);
 
 displayBooks();
+
+newBookBtn.addEventListener("click", () => {});
 
 function Book(title, author, pages, read) {
 	this.title = title;
