@@ -54,6 +54,8 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function displayBooks() {
+	yourBooks.replaceChildren();
+
 	for (const book of myLibrary) {
 		const card = document.createElement("div");
 		card.classList.add("card");
