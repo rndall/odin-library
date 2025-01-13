@@ -6,8 +6,8 @@ const closeBtn = document.querySelector("#close-btn");
 
 const myLibrary = [];
 
-addBookToLibrary("Test1", "Elon Musk", 23, false);
-addBookToLibrary("Test2", "Hana", 89, true);
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 323, false);
+addBookToLibrary("Romeo and Juliet", "William Shakespeare", 281, true);
 
 displayBooks();
 
