@@ -23,7 +23,7 @@ bookForm.addEventListener("submit", (e) => {
 		titleInput.value,
 		authorInput.value,
 		pagesInput.value,
-		readInput.value,
+		readInput.checked,
 	);
 
 	bookForm.reset();
