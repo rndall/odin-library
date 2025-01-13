@@ -94,8 +94,12 @@ header {
 	cursor: pointer;
 }
 
-.button--danger {
+.button--state-danger {
 	background-color: red;
+}
+
+.button--state-success {
+	background-color: green;
 }
 
 #new-book-dialog {
@@ -158,4 +162,8 @@ main {
 
 .card__text--italic {
 	font-style: italic;
+}
+
+.card__button {
+	width: 160px;
 }

@@ -48,6 +48,9 @@ function Book(title, author, pages, read) {
 	this.read = read;
 	this.info = () =>
 		`${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "already read" : "not read yet"}`;
+	this.toggleRead = () => {
+		this.read = !this.read;
+	};
 }
 
 function addBookToLibrary(title, author, pages, read) {
@@ -74,19 +77,27 @@ function displayBooks() {
 		pages.classList.add("card__text");
 		pages.textContent = `${book.pages} pages`;
 
-		const read = document.createElement("p");
-		read.classList.add("card__text");
-		read.textContent = book.read ? "Already Read" : "Not Read Yet";
+		const readStatus = document.createElement("button");
+		readStatus.classList.add(
+			"card__button",
+			"button",
+			book.read ? "button--state-success" : "button--state-danger",
+		);
+		readStatus.textContent = book.read ? "Already Read" : "Not Read Yet";
+		readStatus.addEventListener("click", () => {
+			myLibrary[i].toggleRead();
+			displayBooks();
+		});
 
 		const removeBtn = document.createElement("button");
-		removeBtn.classList.add("button", "button--danger");
+		removeBtn.classList.add("card__button", "button", "button--state-danger");
 		removeBtn.textContent = "Remove";
 		removeBtn.addEventListener("click", () => {
 			myLibrary.splice(i, 1);
 			displayBooks();
 		});
 
-		card.append(title, author, pages, read, removeBtn);
+		card.append(title, author, pages, readStatus, removeBtn);
 		yourBooks.appendChild(card);
 	}
 }
