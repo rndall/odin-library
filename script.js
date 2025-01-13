@@ -1,5 +1,7 @@
 const newBookBtn = document.querySelector("#new-book");
 const yourBooks = document.querySelector("#your-books");
+const newBookDialog = document.querySelector("#new-book-dialog");
+const closeBtn = document.querySelector("#close-btn");
 
 const myLibrary = [];
 
@@ -8,7 +10,13 @@ addBookToLibrary("Test2", "Hana", 89, true);
 
 displayBooks();
 
-newBookBtn.addEventListener("click", () => {});
+closeBtn.addEventListener("click", () => {
+	newBookDialog.close();
+});
+
+newBookBtn.addEventListener("click", () => {
+	newBookDialog.showModal();
+});
 
 function Book(title, author, pages, read) {
 	this.title = title;

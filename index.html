@@ -19,5 +19,31 @@
 
       <div id="your-books"></div>
     </main>
+
+    <dialog id="new-book-dialog">
+      <h2>Add New Book</h2>
+      <form class="form">
+        <label class="form__label">
+          Title <input class="form__input" id="title" type="text" required />
+        </label>
+        <label class="form__label">
+          Author <input class="form__input" id="author" type="text" required />
+        </label>
+        <label class="form__label">
+          Pages <input class="form__input" id="pages" type="tel" required />
+        </label>
+        <label class="form__label">
+          Read? <input class="form__input" id="read" type="checkbox" />
+        </label>
+        <button class="form__button button" id="add-book-btn">Add Book</button>
+        <button
+          class="form__button button button--danger"
+          id="close-btn"
+          type="button"
+        >
+          Close
+        </button>
+      </form>
+    </dialog>
   </body>
 </html>
