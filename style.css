@@ -145,6 +145,7 @@ main {
 	display: grid;
 	gap: 8px;
 	align-content: center;
+	justify-content: center;
 	background-color: white;
 	height: 250px;
 	border-radius: 8px;

@@ -58,7 +58,7 @@ function addBookToLibrary(title, author, pages, read) {
 function displayBooks() {
 	yourBooks.replaceChildren();
 
-	for (const book of myLibrary) {
+	for (const [i, book] of myLibrary.entries()) {
 		const card = document.createElement("div");
 		card.classList.add("card");
 
@@ -78,7 +78,15 @@ function displayBooks() {
 		read.classList.add("card__text");
 		read.textContent = book.read ? "Already Read" : "Not Read Yet";
 
-		card.append(title, author, pages, read);
+		const removeBtn = document.createElement("button");
+		removeBtn.classList.add("button", "button--danger");
+		removeBtn.textContent = "Remove";
+		removeBtn.addEventListener("click", () => {
+			myLibrary.splice(i, 1);
+			displayBooks();
+		});
+
+		card.append(title, author, pages, read, removeBtn);
 		yourBooks.appendChild(card);
 	}
 }
