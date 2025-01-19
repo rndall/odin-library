@@ -39,7 +39,7 @@ bookForm.addEventListener("submit", (e) => {
 	addBookToLibrary(
 		titleInput.value,
 		authorInput.value,
-		pagesInput.value,
+		+pagesInput.value,
 		readInput.checked,
 	);
 
@@ -80,7 +80,7 @@ function displayBooks() {
 
 		const pages = document.createElement("p");
 		pages.classList.add("card__text");
-		pages.textContent = `${book.pages} pages`;
+		pages.textContent = `${book.pages} ${book.pages === 1 ? "page" : "pages"}`;
 
 		const readStatus = document.createElement("button");
 		readStatus.classList.add(
