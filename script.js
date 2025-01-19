@@ -6,6 +6,23 @@ const closeBtn = document.querySelector("#close-btn");
 
 const myLibrary = [];
 
+class Book {
+	constructor(title, author, pages, read) {
+		this.title = title;
+		this.author = author;
+		this.pages = pages;
+		this.read = read;
+	}
+
+	info() {
+		return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "already read" : "not read yet"}`;
+	}
+
+	toggleRead() {
+		this.read = !this.read;
+	}
+}
+
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 323, false);
 addBookToLibrary("Romeo and Juliet", "William Shakespeare", 281, true);
 
@@ -40,18 +57,6 @@ closeBtn.addEventListener("click", () => {
 newBookBtn.addEventListener("click", () => {
 	newBookDialog.showModal();
 });
-
-function Book(title, author, pages, read) {
-	this.title = title;
-	this.author = author;
-	this.pages = pages;
-	this.read = read;
-	this.info = () =>
-		`${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "already read" : "not read yet"}`;
-	this.toggleRead = () => {
-		this.read = !this.read;
-	};
-}
 
 function addBookToLibrary(title, author, pages, read) {
 	const book = new Book(title, author, pages, read);
