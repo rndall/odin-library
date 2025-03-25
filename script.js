@@ -2,6 +2,9 @@ const newBookBtn = document.querySelector("#new-book");
 const yourBooks = document.querySelector("#your-books");
 const newBookDialog = document.querySelector("#new-book-dialog");
 const bookForm = document.querySelector("#book-form");
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const pages = document.querySelector("#pages");
 const closeBtn = document.querySelector("#close-btn");
 
 const myLibrary = [];
@@ -27,6 +30,34 @@ addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 323, false);
 addBookToLibrary("Romeo and Juliet", "William Shakespeare", 281, true);
 
 displayBooks();
+
+title.addEventListener("input", () => {
+	title.setCustomValidity("");
+
+	if (!title.validity.valid) {
+		title.setCustomValidity("Please input a title.");
+		return
+	}
+})
+
+author.addEventListener("input", () => {
+	author.setCustomValidity("");
+
+	if (!author.validity.valid) {
+		author.setCustomValidity("Please input an author.");
+		return	
+	}
+})
+
+pages.addEventListener("input", () => {
+	pages.setCustomValidity("");
+
+	if (pages.validity.valueMissing) {
+		pages.setCustomValidity("Please input the number of pages.");
+	} else if (pages.validity.patternMismatch) {
+		pages.setCustomValidity("Please input a number.");
+	}
+})
 
 bookForm.addEventListener("submit", (e) => {
 	e.preventDefault();
